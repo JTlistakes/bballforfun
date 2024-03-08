@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const MainScreen = () => {
   const [players, setPlayers] = useState(1);
   const [oppPlayers, setOppPlayers] = useState(1);
-  const handleStart = () => {
-    console.log("start -> ");
-  };
+  const handleStart = () => {};
   const handleDrag = () => {};
   const handleStop = () => {};
+  const { height, width } = useWindowDimensions();
+  const playerSize= 0.05*Math.min(width,height)
 
   const player = (color, position, playerName) => {
-    console.log("color -> ", color);
+    console.log("height,width -> ",height,width);
     return (
       <Draggable
         // axis="x"
@@ -27,9 +28,9 @@ const MainScreen = () => {
         <div
           className="handle"
           style={{
-            width: "50px",
+            width: playerSize,
             background: color,
-            height: "50px",
+            height: playerSize,
             borderRadius: "100px",
             alignItems: "center",
             borderColor: "black",
@@ -45,15 +46,13 @@ const MainScreen = () => {
 
   for (let i = 0; i < 5; i++) {
     draggables.push(
-      player("lightBlue", { x: 100+90 * i, y: -i * 71 }, `P${i + 1}`)
+      player("lightBlue", { x: 100 + 90 * i, y: -i * (21+playerSize) }, `P${i + 1}`)
     );
   }
-  draggables.push(
-    player("Orange", { x: 1000 - 90 * 5, y:   -(5) * 71 }, `王`)
-  );
+  draggables.push(player("Orange", { x: 1000 - 90 * 5, y: -5 * (21+playerSize)}, `王`));
   for (let i = 0; i < 5; i++) {
     draggables.push(
-      player("red", { x: 1000 - 90 * i, y:   -(6+i) * 71 }, `O${i + 1}`)
+      player("red", { x: 1000 - 90 * i, y: -(6 + i) * (21+playerSize) }, `O${i + 1}`)
     );
   }
 
