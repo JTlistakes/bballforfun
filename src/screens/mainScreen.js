@@ -37,9 +37,9 @@ const MainScreen = () => {
             border: "2px",
           }}
         >
-          <h5 style={{ textAlign: "center", alignItems: "center" }}>
+          <h3 style={{ textAlign: "center", alignItems: "center" }}>
             {playerName}
-          </h5>
+          </h3>
         </div>
       </Draggable>
     );
