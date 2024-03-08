@@ -9,7 +9,7 @@ function App() {
       style={{
         backgroundImage: `url(${CourtImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "contain",
+        backgroundSize: "100% 100%",
         backgroundPosition: "top left",
         height: "100vh",
         width: "auto",
