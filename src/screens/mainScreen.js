@@ -9,10 +9,10 @@ const MainScreen = () => {
   const handleDrag = () => {};
   const handleStop = () => {};
   const { height, width } = useWindowDimensions();
-  const playerSize= 0.05*Math.min(width,height)
+  const playerSize = Math.max(0.05 * Math.min(width, height), 30);
 
   const player = (color, position, playerName) => {
-    console.log("height,width -> ",height,width);
+    console.log("height,width -> ", height, width);
     return (
       <Draggable
         // axis="x"
@@ -37,7 +37,9 @@ const MainScreen = () => {
             border: "2px",
           }}
         >
-          <h1 style={{ textAlign: "center" }}>{playerName}</h1>
+          <h5 style={{ textAlign: "center", alignItems: "center" }}>
+            {playerName}
+          </h5>
         </div>
       </Draggable>
     );
@@ -46,13 +48,27 @@ const MainScreen = () => {
 
   for (let i = 0; i < 5; i++) {
     draggables.push(
-      player("lightBlue", { x: 100 + 90 * i, y: -i * (21+playerSize) }, `P${i + 1}`)
+      player(
+        "lightBlue",
+        { x: playerSize * 2 + 90 * i, y: -i * (21 + playerSize) },
+        `P${i + 1}`
+      )
     );
   }
-  draggables.push(player("Orange", { x: 1000 - 90 * 5, y: -5 * (21+playerSize)}, `王`));
+  draggables.push(
+    player(
+      "Orange",
+      { x: playerSize * 2 + 90 * 5, y: -5 * (21 + playerSize) },
+      `王`
+    )
+  );
   for (let i = 0; i < 5; i++) {
     draggables.push(
-      player("red", { x: 1000 - 90 * i, y: -(6 + i) * (21+playerSize) }, `O${i + 1}`)
+      player(
+        "red",
+        { x: playerSize * 2 + 90 * i, y: playerSize - (6 + i) * (21 + playerSize) },
+        `O${i + 1}`
+      )
     );
   }
 
