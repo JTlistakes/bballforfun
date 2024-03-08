@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/bballforfun/static/css/main.f855e6bc.css",
-    "main.js": "/bballforfun/static/js/main.ba37605d.js",
+    "main.js": "/bballforfun/static/js/main.4b70781b.js",
     "static/js/453.dfe6ee8b.chunk.js": "/bballforfun/static/js/453.dfe6ee8b.chunk.js",
     "static/media/court.jpg": "/bballforfun/static/media/court.4388d3f8b0b34973043c.jpg",
     "static/media/logo.svg": "/bballforfun/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/bballforfun/index.html",
     "main.f855e6bc.css.map": "/bballforfun/static/css/main.f855e6bc.css.map",
-    "main.ba37605d.js.map": "/bballforfun/static/js/main.ba37605d.js.map",
+    "main.4b70781b.js.map": "/bballforfun/static/js/main.4b70781b.js.map",
     "453.dfe6ee8b.chunk.js.map": "/bballforfun/static/js/453.dfe6ee8b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.ba37605d.js"
+    "static/js/main.4b70781b.js"
   ]
 }
